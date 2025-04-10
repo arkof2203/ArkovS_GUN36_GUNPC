@@ -1,0 +1,14 @@
+C:\Users\Виктория\source\repos\MyFirctApp\MyFirctApp\bin\Debug\net8.0\MyFirctApp.exe
+C:\Users\Виктория\source\repos\MyFirctApp\MyFirctApp\bin\Debug\net8.0\MyFirctApp.deps.json
+C:\Users\Виктория\source\repos\MyFirctApp\MyFirctApp\bin\Debug\net8.0\MyFirctApp.runtimeconfig.json
+C:\Users\Виктория\source\repos\MyFirctApp\MyFirctApp\bin\Debug\net8.0\MyFirctApp.dll
+C:\Users\Виктория\source\repos\MyFirctApp\MyFirctApp\bin\Debug\net8.0\MyFirctApp.pdb
+C:\Users\Виктория\source\repos\MyFirctApp\MyFirctApp\obj\Debug\net8.0\MyFirctApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Виктория\source\repos\MyFirctApp\MyFirctApp\obj\Debug\net8.0\MyFirctApp.AssemblyInfoInputs.cache
+C:\Users\Виктория\source\repos\MyFirctApp\MyFirctApp\obj\Debug\net8.0\MyFirctApp.AssemblyInfo.cs
+C:\Users\Виктория\source\repos\MyFirctApp\MyFirctApp\obj\Debug\net8.0\MyFirctApp.csproj.CoreCompileInputs.cache
+C:\Users\Виктория\source\repos\MyFirctApp\MyFirctApp\obj\Debug\net8.0\MyFirctApp.dll
+C:\Users\Виктория\source\repos\MyFirctApp\MyFirctApp\obj\Debug\net8.0\refint\MyFirctApp.dll
+C:\Users\Виктория\source\repos\MyFirctApp\MyFirctApp\obj\Debug\net8.0\MyFirctApp.pdb
+C:\Users\Виктория\source\repos\MyFirctApp\MyFirctApp\obj\Debug\net8.0\MyFirctApp.genruntimeconfig.cache
+C:\Users\Виктория\source\repos\MyFirctApp\MyFirctApp\obj\Debug\net8.0\ref\MyFirctApp.dll
