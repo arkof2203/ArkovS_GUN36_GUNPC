@@ -2,48 +2,62 @@
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Введите число");
+        Console.WriteLine("Enter the first number");
         if (!int.TryParse(Console .ReadLine(), out int a))
         {
-            Console.WriteLine("Ошибка! Введено некорректное число.");
+            Console.WriteLine("Error! Invalid number.");
             return;
         }
 
-        Console.WriteLine("Введите второе число");
+        Console.WriteLine("Enter the second number");
         if (!int.TryParse(Console .ReadLine(), out int b))
         {
-            Console.WriteLine("Ошибка! Введено некорректное число.");
+            Console.WriteLine("Error! Invalid number.");
             return;
         }
 
-        Console.WriteLine("Введите знак (+, -, *, /, %):");
+        Console.WriteLine("Enter bitwise operator & | ^ + - / % *");
         var s = Console.ReadLine();
-        var boolVar = true;
-        if (s.Length == 0 || s.Length > 1 && !boolVar)
+        if (s.Length == 0 || s.Length > 1)
         {
-            Console.WriteLine("Ошибка! Неверный ввод операции.");
+            Console.WriteLine("Error! Invalid operator.");
             return;
         }
 
         switch (s[0])
         {
-            case '+':
-                Console.WriteLine("Результат {0} + {1} = {2}", a, b, a + b);
+            case '&':
+                Console.WriteLine("Result {0} & {1} = {2}", a, b, a & b);
+                Console.WriteLine(Convert.ToString(a & b, 2));
+                Console.WriteLine(Convert.ToString(a & b, 16));
                 break;
-            case '-':
-                Console.WriteLine("Результат {0} - {1} = {2}", a, b, a - b);
+            case '|':
+                Console.WriteLine("Result {0} | {1} = {2}", a, b, a | b);
+                Console.WriteLine(Convert.ToString(a | b, 2));
+                Console.WriteLine(Convert.ToString(a | b, 16));
                 break;
-            case '*':
-                Console.WriteLine("Результат {0} * {1} = {2}", a, b, a * b);
+            case '^':
+                Console.WriteLine("Result {0} ^ {1} = {2}", a, b, a ^ b);
+                Console.WriteLine(Convert.ToString(a ^ b, 2));
+                Console.WriteLine(Convert.ToString(a ^ b, 16));
                 break;
             case '/':
-                Console.WriteLine("Результат {0} / {1} = {2}", a, b, a / b);
+                Console.WriteLine("Result {0} / {1} = {2}", a, b, a / b);
                 break;
             case '%':
-                Console.WriteLine("Результат {0} % {1} = {2}", a, b, a % b);
+                Console.WriteLine("Result {0} % {1} = {2}", a, b, a % b);
+                break;
+            case '+':
+                Console.WriteLine("Result {0} + {1} = {2}", a, b, a + b);
+                break;
+            case '-':
+                Console.WriteLine("Result {0} - {1} = {2}", a, b, a - b);
+                break;
+            case '*':
+                Console.WriteLine("Result {0} * {1} = {2}", a, b, a * b);
                 break;
             default: 
-                Console.WriteLine("Ошибка! Неизвестная операция.");
+                Console.WriteLine("Error! Unknown operation.");
                 break;
 
         }
