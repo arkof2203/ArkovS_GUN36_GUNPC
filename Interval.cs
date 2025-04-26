@@ -49,76 +49,10 @@
         public float Armor;
 
 
-        public Unit() : this("Unknown Unit")
-        {
-        }
-
-        public Unit(string name, int minDamage, int maxDamage)
-        {
-            Name = name;
-            _health = 100f;
-            Armor = 0.6f;
-            Damage = 5;
-        }
-
-        public float GetRealHealth()
-        {
-            return _health * (1f + Armor);
-        }
-
-        public bool SetDamage(float value)
-        {
-            _health -= value * Armor;
-            return _health <= 0f;
-
-        }
-    }
 
 
-    public class Weapon
-    {
-        public string Name { get; }
-        public int MinDamage { get; private set; }
-        public int MaxDamage { get; private set; }
-        public float Durability { get; }
 
-
-        public Weapon(string name, int minDamage, int maxDamage, float durability) : this(name)
-        {
-            SetDamageParams(minDamage, maxDamage);
-        }
-
-        public Weapon(string name)
-        {
-            Name = name;
-        }
-
-        public void SetDamageParams(int minDamage, int maxDamage)
-        {
-            if (minDamage > maxDamage)
-            {
-                (minDamage, maxDamage) = (maxDamage, minDamage);
-                Console.WriteLine("Некорректные входные данные \"{Name}\"");
-            }
-
-            if (minDamage < 1f)
-            {
-                minDamage = 1;
-                Console.WriteLine("форсированной установки минимального значения");
-            }
-
-            if (maxDamage <= 1)
-            {
-                maxDamage = 10;
-            }
-
-        }
-
-        public int GetDamage()
-        {
-            return (MinDamage + MaxDamage) / 2;
-        }
-    }
+    
 
     public struct Room
     {

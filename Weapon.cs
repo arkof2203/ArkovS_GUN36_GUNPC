@@ -6,12 +6,10 @@ namespace Classes;
 public class Weapon
 {
     public string Name { get; }
-    public int MinDamage { get; private set; }
-    public int MaxDamage { get; private set; }
     public float Durability { get; }
 
 
-    public Weapon(string name, int minDamage, int maxDamage, float durability): this (name)
+    public Weapon(string name, int minDamage, int maxDamage,): this (name)
     {
         SetDamageParams(minDamage, maxDamage);
     }

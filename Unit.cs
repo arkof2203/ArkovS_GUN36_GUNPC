@@ -12,7 +12,7 @@ public class Unit
 
     public float Health => _health;
 
-    public int Damage {  get; }
+    public Interval Damage { get; }
 
     public float Armor;
 
@@ -21,12 +21,12 @@ public class Unit
     {
     }
 
-    public Unit(string name)
+    public Unit(string name, Interval damage)
     {
         Name = name;
        _health = 100f;
         Armor = 0.6f;
-        Damage = 5;
+        Damage = damage;
     }
 
     public float GetRealHealth()
