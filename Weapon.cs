@@ -42,6 +42,6 @@ public class Weapon
 
     public int GetDamage()
     {
-        return (MinDamage + MaxDamage) / 2;
+        return DamageInterval.Get();
     }
 }

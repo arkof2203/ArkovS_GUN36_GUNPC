@@ -1,65 +1,58 @@
-﻿class Program
+﻿using System;
+using System.Collections.Generic;
+
+
+namespace HomeWork
 {
-    static void Main(string[] args)
+
+    internal class Program
     {
-        Console.WriteLine("Enter the first number");
-        if (!int.TryParse(Console .ReadLine(), out int a))
+        private class ListTask
         {
-            Console.WriteLine("Error! Invalid number.");
-            return;
+            private readonly List<string> _listOfStrings = new List<string>();
+
+            public void TaskLoop()
+            {
+
+                Console.WriteLine("Task 1: Работа со списком строк.");
+                Console.WriteLine("Для выхода введите exit");
+                Console.WriteLine();
+
+                _listOfStrings.Add("Первый элемент");
+                _listOfStrings.Add("Второй элемент");
+                _listOfStrings.Add("Третий элемент");
+
+                Console.WriteLine("Введите новою строку");
+                string input = Console.ReadLine();
+                if (input == "exit") return;
+                _listOfStrings.Add(input);
+
+                Console.WriteLine("Введите ещё одну строку для добавления в середину списка");
+                input = Console.ReadLine();
+                if (input == "--exit") return;
+                int middleIndex = _listOfStrings.Count / 2;
+                _listOfStrings.Insert(middleIndex, input);
+
+                foreach (var str in _listOfStrings)
+                {
+                    Console.WriteLine(str);
+                }
+            }
+
         }
 
-        Console.WriteLine("Enter the second number");
-        if (!int.TryParse(Console .ReadLine(), out int b))
+        private class DictionaryTask
         {
-            Console.WriteLine("Error! Invalid number.");
-            return;
-        }
+            private readonly List<string, int> _listOfStrings = new List<string, int>();
 
-        Console.WriteLine("Enter bitwise operator & | ^ + - / % *");
-        var s = Console.ReadLine();
-        if (s.Length == 0 || s.Length > 1)
-        {
-            Console.WriteLine("Error! Invalid operator.");
-            return;
-        }
+            public void TaskLoop()
+            {
 
-        switch (s[0])
-        {
-            case '&':
-                Console.WriteLine("Result {0} & {1} = {2}", a, b, a & b);
-                Console.WriteLine(Convert.ToString(a & b, 2));
-                Console.WriteLine(Convert.ToString(a & b, 16));
-                break;
-            case '|':
-                Console.WriteLine("Result {0} | {1} = {2}", a, b, a | b);
-                Console.WriteLine(Convert.ToString(a | b, 2));
-                Console.WriteLine(Convert.ToString(a | b, 16));
-                break;
-            case '^':
-                Console.WriteLine("Result {0} ^ {1} = {2}", a, b, a ^ b);
-                Console.WriteLine(Convert.ToString(a ^ b, 2));
-                Console.WriteLine(Convert.ToString(a ^ b, 16));
-                break;
-            case '/':
-                Console.WriteLine("Result {0} / {1} = {2}", a, b, a / b);
-                break;
-            case '%':
-                Console.WriteLine("Result {0} % {1} = {2}", a, b, a % b);
-                break;
-            case '+':
-                Console.WriteLine("Result {0} + {1} = {2}", a, b, a + b);
-                break;
-            case '-':
-                Console.WriteLine("Result {0} - {1} = {2}", a, b, a - b);
-                break;
-            case '*':
-                Console.WriteLine("Result {0} * {1} = {2}", a, b, a * b);
-                break;
-            default: 
-                Console.WriteLine("Error! Unknown operation.");
-                break;
+                Console.WriteLine("Task 1: Работа со списком строк.");
+                Console.WriteLine("Для выхода введите exit");
+                Console.WriteLine();
 
+            }
         }
     }
 }

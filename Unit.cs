@@ -17,7 +17,7 @@ public class Unit
     public float Armor;
 
 
-    public Unit() : this("Unknown Unit")
+    public Unit() : this("Unknown Unit", new Interval(0, 10))
     {
     }
 
@@ -27,6 +27,11 @@ public class Unit
        _health = 100f;
         Armor = 0.6f;
         Damage = damage;
+    }
+
+    public Unit(string name, int minDamage, int maxDamage)
+            : this(name, new Interval(minDamage, maxDamage))
+    {
     }
 
     public float GetRealHealth()
