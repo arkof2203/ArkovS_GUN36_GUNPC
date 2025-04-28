@@ -48,11 +48,54 @@ namespace HomeWork
             public void TaskLoop()
             {
 
-                Console.WriteLine("Task 1: Работа со списком строк.");
+                Console.WriteLine("Task 2: Работа со словарем студентов с их средними оценками");
                 Console.WriteLine("Для выхода введите exit");
                 Console.WriteLine();
 
+                while (true)
+                {
+                    Console.WriteLine("Введите имя студента:");
+                    string name = Console.ReadLine();
+                    if (name == "exit") return;
+
+                    Console.WriteLine("Введите оценку студента от 2 до 5");
+                    string gradeInput = Console.ReadLine();
+                    if (gradeInput == "exit") return;
+
+                    if (int.TryParse(gradeInput, out int grade) && grade >= 2 && grade <= 5)
+                    {
+                        _students[name] = grade;
+                        Console.WriteLine("Добавлено: {name} с оценкой {grade}.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Ошибка! Оценка должна быть числом от 2 до 5");
+
+                    }
+
+                    Console.WriteLine("Хотите найти оценку студента? (да/нет)");
+                    string answer = Console.ReadLine();
+                    if (answer == "exit") return;
+
+                    if (answer.ToLower() == "да")
+                    {
+                        Console.WriteLine("Введите имя студента для поиска:");
+                        string searchName = Console.ReadLine();
+                        if (searchName == "exit") return;
+
+                        if (_students.TryGetValue(searchName, out int foundGrade))
+                        {
+                            Console.WriteLine("{searchName} имеет оценку {foundGrade}.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Студент с именем {searchName} не найден.");
+                        }
+                    }
+
+
+
+                }
             }
-        }
     }
 }
