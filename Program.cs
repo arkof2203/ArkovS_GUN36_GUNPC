@@ -70,7 +70,21 @@ namespace HomeWork
                     else
                     {
                         Console.WriteLine("Ошибка! Оценка должна быть числом от 2 до 5");
+                    }
+                    while (true)
+                    {
+                        Console.WriteLine("Введите оценку студента (от 2 до 5):");
+                        gradeInput = Console.ReadLine();
+                        if (gradeInput == "exit") return;
 
+                        if (int.TryParse(gradeInput, out grade) && grade >= 2 && grade <= 5)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Ошибка! Оценка должна быть числом от 2 до 5.");
+                        }
                     }
 
                     Console.WriteLine("Хотите найти оценку студента? (да/нет)");
@@ -97,5 +111,138 @@ namespace HomeWork
 
                 }
             }
+        }
+
+        private class LinkedListTask
+        {
+            private class Node
+            {
+                public string Data;
+                public Node Next;
+                public Node Prev;
+
+                public Node(string data)
+                {
+                    Data = data;
+                }
+            }
+
+            private Node _head;
+            private Node _tail;
+
+            public void TaskLoop()
+            {
+                Console.WriteLine("Task 3: Работа с двусвязным списком.");
+                Console.WriteLine("Для выхода введите 'exit' в любое время.");
+                Console.WriteLine("Введите от 3 до 6 элементов:");
+
+                int count = 0;
+                while (count < 6)
+                {
+                    string input = Console.ReadLine();
+                    if (input == "exit") return;
+
+                    AddLast(input);
+                    count++;
+
+                    if (count >= 3)
+                    {
+                        Console.WriteLine("Хотите закончить ввод? (да/нет)");
+                        string answer = Console.ReadLine();
+                        if (answer == "exit") return;
+                        if (answer.ToLower() == "да")
+                        {
+                            break;
+                        }
+                    }
+                }
+
+                Console.WriteLine("Список в прямом порядке:");
+                PrintForward();
+
+                Console.WriteLine("Список в обратном порядке:");
+                PrintBackward();
+            }
+
+            private void AddLast(string data)
+            {
+                Node newNode = new Node(data);
+                if (_head == null)
+                {
+                    _head = _tail = newNode;
+                }
+                else
+                {
+                    _tail.Next = newNode;
+                    newNode.Prev = _tail;
+                    _tail = newNode;
+                }
+            }
+
+            private void PrintForward()
+            {
+                Node current = _head;
+                while (current != null)
+                {
+                    Console.WriteLine(current.Data);
+                    current = current.Next;
+                }
+            }
+
+            private void PrintBackward()
+            {
+                Node current = _tail;
+                while (current != null)
+                {
+                    Console.WriteLine(current.Data);
+                    current = current.Prev;
+                }
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Выберите задание для проверки: 1, 2 или 3");
+            if (int.TryParse(Console.ReadLine(), out int task))
+            {
+                switch (task)
+                {
+                    case 1:
+                        CheckTaskFirst();
+                        break;
+                    case 2:
+                        CheckTaskSecond();
+                        break;
+                    case 3:
+                        CheckTaskThird();
+                        break;
+                    default:
+                        Console.WriteLine("Неверный номер задачи.");
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Ошибка ввода числа.");
+            }
+        }
+
+        private static void CheckTaskFirst()
+        {
+            var listTask = new ListTask();
+            listTask.TaskLoop();
+        }
+
+        private static void CheckTaskSecond()
+        {
+            var dictTask = new DictionaryTask();
+            dictTask.TaskLoop();
+        }
+
+        private static void CheckTaskThird()
+        {
+            var linkedListTask = new LinkedListTask();
+            linkedListTask.TaskLoop();
+        }
     }
 }

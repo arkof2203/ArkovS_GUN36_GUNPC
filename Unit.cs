@@ -12,7 +12,7 @@ public class Unit
 
     public float Health => _health;
 
-    public Interval Damage { get; }
+    public Interval DamageInterval { get; private set; }
 
     public float Armor;
 
@@ -26,7 +26,7 @@ public class Unit
         Name = name;
        _health = 100f;
         Armor = 0.6f;
-        Damage = damage;
+        DamageInterval = damage
     }
 
     public Unit(string name, int minDamage, int maxDamage)
@@ -44,6 +44,11 @@ public class Unit
         _health -= value * Armor;
         return _health <= 0f;
 
+    }
+
+    public override string ToString()
+    {
+        return $"{Name} (Damage: [{DamageInterval.Min}, {DamageInterval.Max}])";
     }
 }
 
